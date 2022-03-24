@@ -1,5 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Winecellar, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "validations" do
+    it {should validate_presence_of(:name)}
+    xit {should validate_presence_of(:full)}
+    xit {validates :full , :inclusion => {:in => [true, false]}}
+    it {should validate_presence_of(:location)}
+    it {should validate_presence_of(:capacity)}
+  end
+
+  describe "relationships" do
+    it {should have_many :wines }
+  end
 end

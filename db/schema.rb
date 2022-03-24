@@ -17,6 +17,9 @@ ActiveRecord::Schema.define(version: 2022_03_24_203510) do
 
   create_table "winecellars", force: :cascade do |t|
     t.string "name"
+    t.boolean "full"
+    t.string "location"
+    t.integer "capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

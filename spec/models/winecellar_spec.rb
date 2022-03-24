@@ -4,6 +4,7 @@ RSpec.describe Winecellar, type: :model do
   describe "validations" do
     it {should validate_presence_of(:name)}
     xit {should validate_presence_of(:full)}
+    xit {validates :full , :inclusion => {:in => [true, false]}}
     it {should validate_presence_of(:location)}
     it {should validate_presence_of(:capacity)}
   end

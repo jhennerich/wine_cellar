@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_24_203510) do
+ActiveRecord::Schema.define(version: 2022_03_24_211704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,4 +24,18 @@ ActiveRecord::Schema.define(version: 2022_03_24_203510) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "wines", force: :cascade do |t|
+    t.string "name"
+    t.string "varietal"
+    t.integer "quantity"
+    t.boolean "in_stock"
+    t.date "year"
+    t.integer "wine_score"
+    t.bigint "winecellar_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["winecellar_id"], name: "index_wines_on_winecellar_id"
+  end
+
+  add_foreign_key "wines", "winecellars"
 end

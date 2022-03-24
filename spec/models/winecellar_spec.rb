@@ -7,4 +7,8 @@ RSpec.describe Winecellar, type: :model do
     it {should validate_presence_of(:location)}
     it {should validate_presence_of(:capacity)}
   end
+
+  describe "relationships" do
+    it {should have_many :wines }
+  end
 end

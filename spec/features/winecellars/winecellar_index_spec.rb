@@ -22,8 +22,8 @@ describe "user sees all winecellars" do
 
         visit '/winecellars'
 
-        expect(page).to have_content(john_1.name)
         expect(page).to have_content(john_2.name)
+        expect(page).to have_content(john_1.name)
       end
     end
   end

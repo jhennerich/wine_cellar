@@ -1,6 +1,6 @@
 class WinecellarsController < ApplicationController
   def index
-    @winecellars = Winecellar.all
+    @winecellars = Winecellar.sorted_by_created_at
   end
 
   def show

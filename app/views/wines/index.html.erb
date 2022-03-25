@@ -1,0 +1,18 @@
+<h1>All Wine Cellars</h1>
+<ul id="wines">
+  <% @wines.each do |wine| %>
+    <li>
+    <p>Name:  <%= wine.name %> Varietal: <%= wine.varietal %> </p>
+    </li>
+  <% end %>
+</ul>
+
+<% @wines.each do |wine| %>
+  <h3><a href="/wines/<%= wine.id %>"><%= wine.name %></a></h3>
+  <a href="/wines/<%= wine.id  %>/edit">Edit</a>
+  <form action="/wines/<%= wine.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete"/>
+  </form>
+<% end %>

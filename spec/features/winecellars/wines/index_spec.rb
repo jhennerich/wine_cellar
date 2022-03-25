@@ -20,8 +20,12 @@ RSpec.describe 'Winecellar wines index' do
   it 'shows all of the names of the wines for the winecellar' do
     visit "/winecellars/#{@john_1.id}/wines"
 
+    red_2 = @deb_1.wines.create!(name:'Sirius Bordeaux', varietal:'Merlot-Cabernet',
+                         quantity:1, in_stock:true, year:10.years.ago, wine_score:95)
+
     expect(page).to have_content(@white.name)
     expect(page).to have_content(@red.name)
+    expect(page).not_to have_content(red_2.name)
   end
 
   xit 'links to each songs show page' do

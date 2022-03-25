@@ -1,0 +1,8 @@
+<h1>All Winecellars</h1>
+<ul id="articles">
+  <% @winecellars.each do |cellar| %>
+    <li>
+      <%= cellar.name %>
+    </li>
+  <% end %>
+</ul>

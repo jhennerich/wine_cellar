@@ -1,0 +1,12 @@
+<a href="/wines/">Wine Index</a>
+<h1>Wine attributes for id:<%= @wine.id %></h1>
+
+<h3>Name:<%= @wine.name %></h3>
+<h3>Varietal:<%= @wine.varietal%></h3>
+<h3>In Stock:<%= @wine.in_stock%></h3>
+<h3>Year:<%= @wine.year%></h3>
+<h3>Wine Score:<%=@wine.wine_score%></h3>
+<h3>Created at:<%= @wine.created_at%></h3>
+<h3>Updated at:<%= @wine.updated_at%></h3>
+
+<a href="/wines/<%= @wine.id %>/edit">Edit</a>

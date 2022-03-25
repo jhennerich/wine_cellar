@@ -1,8 +1,8 @@
-<h1>All Winecellars</h1>
+<h1>All Wine Cellars</h1>
 <ul id="articles">
   <% @winecellars.each do |cellar| %>
     <li>
-      <%= cellar.name %>
+    <p>Name:  <%= cellar.name %> Location: <%= cellar.location %> </p>
     </li>
   <% end %>
 </ul>

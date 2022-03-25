@@ -1,7 +1,7 @@
 class WinecellarWinesController < ApplicationController
   def index
-#    binding.pry
-    @wines = Wine.all
+    @winecellar = Winecellar.find(params[:id])
+    @wines = @winecellar.wines
   end
 
 #  def show

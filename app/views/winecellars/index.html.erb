@@ -2,13 +2,12 @@
 <ul id="winecellars">
   <% @winecellars.each do |cellar| %>
     <li>
-    <p>Name:  <%= cellar.name %> Location: <%= cellar.location %> </p>
+    <h3>Name: <a href="/winecellars/<%= cellar.id %>"><%= cellar.name %></a></h3>
     </li>
   <% end %>
 </ul>
 
-<% @winecellars.each do |cellar| %>
-  <h3><a href="/winecellars/<%= cellar.id %>"><%= cellar.name %></a></h3>
+<!-- <% @winecellars.each do |cellar| %>
   <p><%= cellar.location %></p>
   <a href="/winecellars/<%= cellar.id  %>/edit">Edit</a>
   <form action="/winecellars/<%= cellar.id %>" method="POST">
@@ -17,3 +16,4 @@
     <input type="submit" value="delete"/>
   </form>
 <% end %>
+-->

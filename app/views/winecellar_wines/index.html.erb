@@ -1,14 +1,16 @@
+<h1><%= @winecellar.name %></h1>
+
 <ul>
 <% @wines.each do |wine| %>
   <li>
-    <h3>Name:<%= wine.name %></h3>
-    <h3>Varietal:<%= wine.varietal%></h3>
-    <h3>In Stock:<%= wine.in_stock%></h3>
-    <h3>Year:<%= wine.year%></h3>
-    <h3>Wine Score:<%= wine.wine_score%></h3>
-    <h3>Created at:<%= wine.created_at%></h3>
-    <h3>Updated at:<%= wine.updated_at%></h3>
-    <%= link_to wine.name, "/wines/#{wine.id}" %>
+    <h2>Name: <%= link_to wine.name, "/wines/#{wine.id}" %> </h2>
+    <h3>Varietal: <%= wine.varietal%></h3>
+    <h3>Quantity: <%= wine.quantity%></h3>
+    <h3>In Stock: <%= wine.in_stock%></h3>
+    <h3>Year: <%= wine.year%></h3>
+    <h3>Wine Score: <%= wine.wine_score%></h3>
+    <h3>Created at: <%= wine.created_at%></h3>
+    <h3>Updated at: <%= wine.updated_at%></h3>
   </li>
 <% end %>
 </ul>

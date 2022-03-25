@@ -6,5 +6,4 @@ class WinecellarsController < ApplicationController
   def show
     @winecellar = Winecellar.find(params[:id])
   end
-  
 end

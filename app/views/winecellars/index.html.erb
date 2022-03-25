@@ -1,8 +1,19 @@
 <h1>All Wine Cellars</h1>
-<ul id="articles">
+<ul id="winecellars">
   <% @winecellars.each do |cellar| %>
     <li>
     <p>Name:  <%= cellar.name %> Location: <%= cellar.location %> </p>
     </li>
   <% end %>
 </ul>
+
+<% @winecellars.each do |cellar| %>
+  <h3><a href="/winecellars/<%= cellar.id %>"><%= cellar.name %></a></h3>
+  <p><%= cellar.location %></p>
+  <a href="/winecellars/<%= cellar.id  %>/edit">Edit</a>
+  <form action="/winecellars/<%= cellar.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete"/>
+  </form>
+<% end %>

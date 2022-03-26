@@ -20,12 +20,14 @@ RSpec.describe 'wines show page' do
     end
     it "has links to winecellar index and wine index" do
       john_1 = Winecellar.create!(name: 'John', full:0, location:'Basement', capacity:500)
+      white = john_1.wines.create!(name:'Blanc Slate', varietal:'Sauvignon Blanc',
+                           quantity:1, in_stock:true, year:2.years.ago, wine_score:92)
 
-      visit ("/winecellars/#{john_1.id}")
+      visit ("/wines/#{white.id}")
       click_on('Wine Cellar Index')
       expect(current_path).to eq("/winecellars/")
 
-      visit ("/winecellars/#{john_1.id}")
+      visit ("/wines/#{white.id}")
       click_on('Wines Index')
       expect(current_path).to eq("/wines/")
     end

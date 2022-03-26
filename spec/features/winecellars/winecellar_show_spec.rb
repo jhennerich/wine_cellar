@@ -1,3 +1,7 @@
+#User Story 7, Parent Child Count
+#As a visitor
+#When I visit a parent's show page
+#I see a count of the number of children associated with this parent
 require "rails_helper"
 
 describe "user sees a winecellar of a given id" do
@@ -10,5 +14,6 @@ describe "user sees a winecellar of a given id" do
 
       expect(page).to have_content(john_1.name)
     end
-  end
+    it "displays a count of the number of wines" do
+    end
 end

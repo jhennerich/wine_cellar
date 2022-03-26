@@ -3,6 +3,7 @@
   <% @winecellars.each do |cellar| %>
     <li>
     <h3>Name: <a href="/winecellars/<%= cellar.id %>"><%= cellar.name %></a></h3>
+    <h3>Created_at: <%= cellar.created_at %></h3>
     </li>
   <% end %>
 </ul>

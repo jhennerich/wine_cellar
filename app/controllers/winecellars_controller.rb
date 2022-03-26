@@ -5,5 +5,6 @@ class WinecellarsController < ApplicationController
 
   def show
     @winecellar = Winecellar.find(params[:id])
+    @winecount = Wine.number_of_wines(params[:id])
   end
 end

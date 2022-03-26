@@ -12,4 +12,8 @@ RSpec.describe Winecellar, type: :model do
   describe "relationships" do
     it {should have_many :wines }
   end
+  describe 'class methods' do
+    xit '.sorted_by_created_at' do
+    end
+  end
 end

@@ -16,4 +16,5 @@ describe "user sees a winecellar of a given id" do
     end
     it "displays a count of the number of wines" do
     end
+  end
 end

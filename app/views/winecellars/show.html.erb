@@ -1,4 +1,5 @@
 <a href="/winecellars/">Wine Cellar Index</a>
+<a href="/wines/">Wines Index</a>
 <h1>Wine Cellar attributes for id:<%= @winecellar.id %></h1>
 
 <h3>Name:<%= @winecellar.name %></h3>
@@ -9,4 +10,5 @@
 <h3>Updated at:<%= @winecellar.updated_at%></h3>
 
 <h3>Kinds of wine in the Wine Cellar: <%= @winecount %></h3>
+<h3><a href="/winecellars/<%=@winecellar.id%>/wines"> Wines in Wine Cellar Index</a></h3>
 <!-- <a href="/winecellars/<%= @winecellar.id %>/edit">Edit</a> -->

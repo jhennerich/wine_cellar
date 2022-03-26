@@ -27,18 +27,16 @@ RSpec.describe 'Winecellar wines index' do
     expect(page).to have_content(@red.name)
     expect(page).not_to have_content(red_2.name)
   end
+  
+  it "has links to winecellar index and wine index" do
+    john_1 = Winecellar.create!(name: 'John', full:0, location:'Basement', capacity:500)
 
-  xit 'links to each songs show page' do
-    visit "/artists/#{@prince.id}/songs"
+    visit ("/winecellars/#{john_1.id}")
+    click_on('Wine Cellar Index')
+    expect(current_path).to eq("/winecellars/")
 
-    click_on @purple.title
-
-    expect(current_path).to eq("/songs/#{@purple.id}")
-  end
-
-  xit 'shows the average song length for the artist' do
-    visit "/artists/#{@prince.id}/songs"
-
-    expect(page).to have_content("Average Song Length for Prince: 755")
+    visit ("/winecellars/#{john_1.id}")
+    click_on('Wines Index')
+    expect(current_path).to eq("/wines/")
   end
 end

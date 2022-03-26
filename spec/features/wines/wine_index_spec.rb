@@ -23,8 +23,35 @@ describe "user sees all wines" do
       expect(page).to have_content(white.name)
       expect(page).to have_content(red.name)
     end
+    it "has links to winecellar index and wine index" do
+      john_1 = Winecellar.create!(name: 'John', full:0, location:'Basement', capacity:500)
+
+      visit ("/winecellars/#{john_1.id}")
+      click_on('Wine Cellar Index')
+      expect(current_path).to eq("/winecellars/")
+
+      visit ("/winecellars/#{john_1.id}")
+      click_on('Wines Index')
+      expect(current_path).to eq("/wines/")
+    end
     it 'has a link to Wines index shown at top of page' do
 #      page.has_link?(locator = nil, **options, &optional_filter_block) is true
     end
   end
 end
+  #
+  # it "shows all of the songs for the artist" do
+  #
+  #   visit "/artists/#{@prince.id}/songs"
+  #
+  #   expect(page).to have_content(@purple.title)
+  #   expect(page).to have_content(@beret.title)
+  # end
+  #
+  # it "links to each songs show page" do
+  #   visit "/artists/#{@prince.id}/songs"
+  #
+  #   click_on @purple.title
+  #
+  #   expect(current_path).to eq("/songs/#{@purple.id}")
+  # end

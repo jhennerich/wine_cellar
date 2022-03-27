@@ -15,7 +15,7 @@ class WinecellarsController < ApplicationController
 
   def create
     winecellar = Winecellar.create(winecellar_params)
-    redirect_to "/winecellars/#{winecellar.id}"
+    redirect_to "/winecellars"
   end
 
   def winecellar_params

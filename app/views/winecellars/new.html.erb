@@ -1,6 +1,10 @@
 <%= form_with url: '/winecellars', method: :post, local: true do |form| %>
 <%= form.label :name %>
-<%= form.text_field :name %>
+<%= form.text_field :name %><p>
+<%= form.label :location %>
+<%= form.text_field :location %><p>
+<%= form.label :capacity %>
+<%= form.text_field :capacity %><p>
 
 <%= form.submit 'Create Wine Cellar' %>
 <% end %>

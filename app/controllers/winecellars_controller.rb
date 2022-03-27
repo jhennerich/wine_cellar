@@ -18,14 +18,22 @@ class WinecellarsController < ApplicationController
     redirect_to "/winecellars"
   end
 
-  def winecellar_params
-    params.permit(:name, :location, :capacity)
-  end
-
   def new
   end
 
   def edit
+    @winecellar = Winecellar.find(params[:id])
+  end
+
+  def update
+    winecellar = Winecellar.find(params[:id])
+    winecellar.update(winecellar_params)
+    redirect_to "/winecellars/#{winecellar.id}"
+
+  end
+
+  def winecellar_params
+    params.permit(:name, :location, :capacity)
   end
 
 end

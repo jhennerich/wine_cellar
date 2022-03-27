@@ -28,15 +28,19 @@ RSpec.describe 'Edit a Winecellar' do
   it 'can edit a winecellar' do
     winecellar = Winecellar.create!(name: 'John test', location: 'somewhere', capacity:100)
 
-    visit "/winecellars/#{winecellar.id}"
-    expect(page).to have_content('John test')
+    #visit "/winecellars/#{winecellar.id}"
+    #expect(page).to have_content('John test')
+    #click_button('Update Wine Cellar')
 
     visit "/winecellars/#{winecellar.id}/edit"
 
-    fill_in('Name', with: 'John updated winecellar' )
+    fill_in('Name', with: 'TEST' )
+    fill_in('Location', with: 'TEST' )
+    fill_in('Capacity', with: '1' )
     click_button('Update Wine Cellar')
 
+    #binding.pry
     expect(current_path).to eq("/winecellars/#{winecellar.id}")
-    expect(page).to have_content('John updated winecellar')
+    expect(page).to have_content("TEST" )
   end
 end

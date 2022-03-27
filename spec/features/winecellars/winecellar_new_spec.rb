@@ -15,7 +15,7 @@ require 'rails_helper'
 RSpec.describe 'the Winecellar creation' do
   it 'links to the new page from the winecellar index' do
     visit '/winecellars'
-    click_link('New Winecellar')
+    click_link('Create Wine Cellar')
     expect(current_path).to eq('/winecellars/new')
   end
 
@@ -28,5 +28,6 @@ RSpec.describe 'the Winecellar creation' do
     new_winecellar_id = Winecellar.last.id
     expect(current_path).to eq("/winecellars/#{new_winecellar_id}")
     expect(page).to have_content('John')
+
   end
 end

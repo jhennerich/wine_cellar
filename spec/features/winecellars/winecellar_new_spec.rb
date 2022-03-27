@@ -22,12 +22,13 @@ RSpec.describe 'the Winecellar creation' do
   it 'can create a new winecellar' do
     visit '/winecellars/new'
 
-    fill_in('Name', with: 'John' )
+    fill_in('Name', with: 'Test')
+    fill_in('Location', with: 'shelf 2')
+    fill_in('Capacity', with: 10)
     click_button('Create Wine Cellar')
 
-    new_winecellar_id = Winecellar.last.id
-    expect(current_path).to eq("/winecellars/#{new_winecellar_id}")
-    expect(page).to have_content('John')
+    expect(current_path).to eq("/winecellars")
+    expect(page).to have_content('Test')
 
   end
 end

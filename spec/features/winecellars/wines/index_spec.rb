@@ -31,11 +31,11 @@ RSpec.describe 'Winecellar wines index' do
   it "has links to winecellar index and wine index" do
     john_1 = Winecellar.create!(name: 'John', full:0, location:'Basement', capacity:500)
 
-    visit ("/winecellars/#{john_1.id}")
+    visit ("/winecellars/#{john_1.id}/wines")
     click_on('Wine Cellar Index')
     expect(current_path).to eq("/winecellars/")
 
-    visit ("/winecellars/#{john_1.id}")
+    visit ("/winecellars/#{john_1.id}/wines")
     click_on('Wines Index')
     expect(current_path).to eq("/wines/")
   end

@@ -3,12 +3,16 @@
 #As a visitor
 #When I visit '/parents'
 #Then I see the name of each parent record in the system
+### Done
 
 # User Story 6, Parent Index sorted by Most Recently Created
 #As a visitor
 #When I visit the parent index,
 #I see that records are ordered by most recently created first
 #And next to each of the records I see when it was created
+### Done
+
+
 
 require "rails_helper"
 

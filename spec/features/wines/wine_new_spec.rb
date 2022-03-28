@@ -13,25 +13,27 @@
 require 'rails_helper'
 
 RSpec.describe 'Wine creation' do
-  xit 'links to the new page from the wine index' do
-    visit '/wines'
+  it 'links to the new page from the wine index' do
+    john_1 = Winecellar.create!(name: 'John', full:0, location:'Basement', capacity:500)
+    visit "/winecellars/#{john_1.id}/wines"
     click_button('Create Wine')
-    expect(current_path).to eq('/wines/new')
+    expect(current_path).to eq("/winecellars/#{john_1.id}/wines/new")
   end
 
-  xit 'can create a new wine' do
-#    winecellar_id = Winecellar.last.id
+  it 'can create a new wine' do
     john_1 = Winecellar.create!(name: 'John', full:0, location:'Basement', capacity:500)
-    visit '/wines/new'
+    visit "/winecellars/#{john_1.id}/wines"
+
+    click_button('Create Wine')
 
     fill_in('Name', with: 'John wine')
     fill_in('Varietal', with: 'Rose')
     fill_in('Quantity', with: 1)
-    fill_in('Year', with: Date.today.year)
+    fill_in('Year', with: 2022)
     fill_in('wine_score', with: 90)
     click_button('Create Wine')
 
-    expect(current_path).to eq("/wines")
+    expect(current_path).to eq("/winecellars/#{john_1.id}/wines")
     expect(page).to have_content('John wine')
   end
 end

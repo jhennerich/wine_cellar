@@ -10,15 +10,22 @@ class WinecellarWinesController < ApplicationController
 
   def create
     @winecellar = Winecellar.find(params[:id])
-    year = wine_params[:year]
     wine = Wine.create(wine_params)
-    binding.pry
+
     redirect_to "/winecellars/#{@winecellar.id}/wines"
   end
 
   private
-  def wine_params
-    params.permit(:name, :varietal, :quantity, :year, :wine_score, :winecellar_id)
+    def wine_params
+      {
+        name: params[:name],
+        varietal: params[:varietal],
+        quantity: params[:quantity],
+        year: params[:year].to_i,
+        wine_score: params[:wine_score],
+        winecellar_id: @winecellar.id
+      }
+#    params.permit(:name, :varietal, :quantity, :year, :wine_score, :winecellar_id)
   end
 
 #  def show

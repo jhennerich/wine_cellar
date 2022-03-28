@@ -5,11 +5,11 @@ class Wine < ApplicationRecord
 #  validates :in_stock, inclusion:[true, false]
 
   def in_stock
-    if quantity > 0
-      true
-    else
-      false
-    end
+    #if quantity > 0
+    #  true
+    #else
+    #  false
+    #end
   end
 
   def self.is_in_stock

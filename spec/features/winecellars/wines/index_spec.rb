@@ -11,17 +11,17 @@ RSpec.describe 'Winecellar wines index' do
     @deb_1 = Winecellar.create!(name: 'Deb', full:0, location:'Livingroom', capacity:36)
 
     @white = @john_1.wines.create!(name:'Blanc Slate', varietal:'Sauvignon Blanc',
-                         quantity:1, in_stock:true, year:2.years.ago, wine_score:92)
+                         quantity:1, in_stock:true, year:2020, wine_score:92)
 
     @red = @john_1.wines.create!(name:'Elouan', varietal:'Pinot Noir',
-                         quantity:1, in_stock:true, year:5.years.ago, wine_score:95)
+                         quantity:1, in_stock:true, year:2018, wine_score:95)
   end
 
   it 'shows all of the names of the wines for the winecellar' do
     visit "/winecellars/#{@john_1.id}/wines"
 
     red_2 = @deb_1.wines.create!(name:'Sirius Bordeaux', varietal:'Merlot-Cabernet',
-                         quantity:1, in_stock:true, year:10.years.ago, wine_score:95)
+                         quantity:1, in_stock:true, year:2012, wine_score:95)
 
     expect(page).to have_content(@white.name)
     expect(page).to have_content(@red.name)

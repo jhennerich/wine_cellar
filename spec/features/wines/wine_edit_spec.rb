@@ -25,7 +25,7 @@ RSpec.describe 'Edit a Wine' do
   it 'links to the edit page from the wine show page' do
     winecellar = Winecellar.create!(name: 'John test', location: 'somewhere', capacity:100)
     wine = winecellar.wines.create!(name:'Blanc Slate', varietal:'Sauvignon Blanc',
-                         quantity:2, in_stock:true, year:2.years.ago, wine_score:95)
+                         quantity:2, in_stock:true, year:2020, wine_score:95)
 
     visit "/wines/#{wine.id}"
     click_button("Edit #{wine.name}")
@@ -36,7 +36,7 @@ RSpec.describe 'Edit a Wine' do
   it 'can edit a wine' do
     winecellar = Winecellar.create!(name: 'John test', location: 'somewhere', capacity:100)
     wine = winecellar.wines.create!(name:'Blanc Slate', varietal:'Sauvignon Blanc',
-                         quantity:2, in_stock:true, year:2.years.ago, wine_score:95)
+                         quantity:2, in_stock:true, year:2020, wine_score:95)
 
     #visit "/winecellars/#{winecellar.id}"
     #expect(page).to have_content('John test')

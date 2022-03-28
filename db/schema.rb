@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2022_03_24_211704) do
     t.string "name"
     t.string "varietal"
     t.integer "quantity"
-    t.boolean "in_stock", default: false, null: false
+    t.boolean "in_stock", default: true, null: false
     t.integer "year"
     t.integer "wine_score"
     t.bigint "winecellar_id"

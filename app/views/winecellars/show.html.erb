@@ -12,9 +12,5 @@
 <h3>Kinds of wine in the Wine Cellar: <%= @winecount %></h3>
 <p> <%= button_to "Edit #{@winecellar.name}", "/winecellars/#{@winecellar.id}/edit",
         method: :get %></p>
-<hr>
-  <%= button_to "Create Wine", "/wines/new" %>
-<hr>
 
-<h3><a href="/winecellars/<%=@winecellar.id%>/wines"> Wines in Wine Cellar Index</a></h3>
-<!-- <a href="/winecellars/<%= @winecellar.id %>/edit">Edit</a> -->
+<h2><a href="/winecellars/<%=@winecellar.id%>/wines">Wines in <%= @winecellar.name %></a></h2>

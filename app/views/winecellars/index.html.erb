@@ -10,15 +10,4 @@
   <% end %>
 </ul>
 <hr>
-<%= link_to "Create Wine Cellar", "/winecellars/new" %>
-
-<!-- <% @winecellars.each do |cellar| %>
-  <p><%= cellar.location %></p>
-  <a href="/winecellars/<%= cellar.id  %>/edit">Edit</a>
-  <form action="/winecellars/<%= cellar.id %>" method="POST">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="delete"/>
-  </form>
-<% end %>
--->
+<h2><%= link_to "Create Wine Cellar", "/winecellars/new" %></h2>

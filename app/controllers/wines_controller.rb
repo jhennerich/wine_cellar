@@ -1,6 +1,7 @@
 class WinesController < ApplicationController
   def index
-    @wines = Wine.all
+    @wines = Wine.is_in_stock
+    @wines_all = Wine.all
   end
 
   def show

@@ -5,7 +5,7 @@ RSpec.describe Wine, type: :model do
     it {should validate_presence_of(:name)}
     it {should validate_presence_of(:varietal)}
     it {should validate_presence_of(:quantity)}
-    it {should validate_presence_of(:in_stock)}
+#    it {should validate_presence_of(:in_stock)}
     it {should validate_presence_of(:year)}
     it {should validate_presence_of(:wine_score)}
   end

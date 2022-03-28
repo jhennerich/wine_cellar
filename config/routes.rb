@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   get '/wines/:id/edit', to: 'wines#edit'
   patch '/wines/:id', to: 'wines#update'
   post '/winecellars/:id/wines', to: 'winecellar_wines#create'
-  post '/winecellars/:id/wines/new', to: 'wines#new'
+  post '/winecellars/:id/wines/new', to: 'winecellar_wines#new'
 end

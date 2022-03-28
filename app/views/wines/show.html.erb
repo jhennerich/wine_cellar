@@ -1,7 +1,7 @@
 <a href="/winecellars/">Wine Cellar Index</a>
 <a href="/wines/">Wines Index</a>
 
-<h1>Wine attributes for id:<%= @wine.id %></h1>
+<h1>Wine attributes for <%= @wine.name %>: </h1>
 
 <h3>Name:<%= @wine.name %></h3>
 <h3>Varietal:<%= @wine.varietal%></h3>
@@ -11,4 +11,8 @@
 <h3>Created at:<%= @wine.created_at%></h3>
 <h3>Updated at:<%= @wine.updated_at%></h3>
 
-<a href="/wines/<%= @wine.id %>/edit">Edit</a>
+<!-- <a href="/wines/<%= @wine.id %>/edit">Edit</a>
+  -->
+
+<p> <%= button_to "Edit #{@wine.name}", "/wines/#{@wine.id}/edit",
+        method: :get %></p>

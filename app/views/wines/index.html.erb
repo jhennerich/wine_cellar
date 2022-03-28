@@ -2,6 +2,7 @@
 <a href="/wines/">Wines Index</a>
 
 <h1>All Wines </h1>
+
 <ul id="wines">
   <% @wines.each do |wine| %>
     <li>
@@ -16,14 +17,3 @@
     </li>
   <% end %>
 </ul>
-
-<!--
-<% @wines.each do |wine| %>
-  <a href="/wines/<%= wine.id  %>/edit">Edit</a>
-  <form action="/wines/<%= wine.id %>" method="POST">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="delete"/>
-  </form>
-<% end %>
--->

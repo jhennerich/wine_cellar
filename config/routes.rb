@@ -11,5 +11,12 @@ Rails.application.routes.draw do
 #  delete '/winecellars/:id', to: 'winecellars#destroy'
 
   get '/wines', to: 'wines#index'
+  get '/wines/new', to: 'wines#new'
+  post '/wines', to: 'wines#create'
+  post '/wines/new', to: 'wines#new'
   get '/wines/:id', to: 'wines#show'
+  get '/wines/:id/edit', to: 'wines#edit'
+  patch '/wines/:id', to: 'wines#update'
+  post '/winecellars/:id/wines', to: 'winecellar_wines#create'
+  post '/winecellars/:id/wines/new', to: 'wines#new'
 end

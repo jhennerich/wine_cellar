@@ -5,7 +5,7 @@ RSpec.describe Wine, type: :model do
     it {should validate_presence_of(:name)}
     it {should validate_presence_of(:varietal)}
     it {should validate_presence_of(:quantity)}
-    xit {should validate_presence_of(:in_stock)}
+    it {should allow_value(true).for(:in_stock)}
     it {should validate_presence_of(:year)}
     it {should validate_presence_of(:wine_score)}
   end
@@ -23,3 +23,7 @@ RSpec.describe Wine, type: :model do
     end
   end
 end
+
+#it { should allow_value(true).for(:foreign) }
+#    it { should allow_value(false).for(:foreign) }
+#    validates :foreign, inclusion: [true, false]

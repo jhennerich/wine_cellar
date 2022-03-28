@@ -30,7 +30,7 @@ RSpec.describe 'Winecellar show page' do
       it "has a link to wines in wine cellar" do
         john_1 = Winecellar.create!(name: 'John', full:0, location:'Basement', capacity:500)
         visit ("/winecellars/#{john_1.id}")
-        click_on('Wines in Wine Cellar Index')
+        click_on("Wines in #{john_1.name}")
         expect(current_path).to eq("/winecellars/#{john_1.id}/wines")
       end
     end

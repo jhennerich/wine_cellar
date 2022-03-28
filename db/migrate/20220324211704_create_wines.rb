@@ -4,7 +4,7 @@ class CreateWines < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :varietal
       t.integer :quantity
-      t.boolean :in_stock, :null => false, :default => false
+      t.boolean :in_stock, :null => false, :default => true
       t.integer :year
       t.integer :wine_score
       t.references :winecellar, foreign_key: true

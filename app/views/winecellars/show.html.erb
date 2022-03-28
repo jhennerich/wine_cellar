@@ -1,6 +1,6 @@
 <a href="/winecellars/">Wine Cellar Index</a>
 <a href="/wines/">Wines Index</a>
-<h1>Wine Cellar attributes for id:<%= @winecellar.id %></h1>
+<h1>Wine Cellar attributes for: <%= @winecellar.name %></h1>
 
 <h3>Name:<%= @winecellar.name %></h3>
 <h3>Full:<%= @winecellar.full%></h3>
@@ -12,5 +12,9 @@
 <h3>Kinds of wine in the Wine Cellar: <%= @winecount %></h3>
 <p> <%= button_to "Edit #{@winecellar.name}", "/winecellars/#{@winecellar.id}/edit",
         method: :get %></p>
+<hr>
+  <%= button_to "Create Wine", "/wines/new" %>
+<hr>
+
 <h3><a href="/winecellars/<%=@winecellar.id%>/wines"> Wines in Wine Cellar Index</a></h3>
 <!-- <a href="/winecellars/<%= @winecellar.id %>/edit">Edit</a> -->

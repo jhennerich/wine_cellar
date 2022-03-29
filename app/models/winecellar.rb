@@ -1,5 +1,5 @@
 class Winecellar < ApplicationRecord
-  has_many :wines
+  has_many :wines, dependent: :destroy
 
   validates_presence_of :name, :location, :capacity
   validates :full, inclusion:[true, false]

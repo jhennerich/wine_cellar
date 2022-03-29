@@ -1,10 +1,18 @@
 class WinecellarWinesController < ApplicationController
   def index
+
+#    binding.pry
+    @quantity_number = 0
     @winecellar = Winecellar.find(params[:id])
     if params[:order] == 'alpha'
       @wines = @winecellar.sort_by_name
     else
       @wines = @winecellar.wines
+    end
+
+    if params[:quantity_number] && params[:quantity_number] != ''
+      @quantity_number = params[:quantity_number]
+      @wines = Wine.quantity_more_than(params[:quantity_number])
     end
   end
 

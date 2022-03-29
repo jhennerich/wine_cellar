@@ -19,4 +19,8 @@ class Wine < ApplicationRecord
   def self.number_of_wines(winecellar_id)
     Wine.where(winecellar_id: winecellar_id).count
   end
+
+  def self.quantity_more_than(quantity)
+    Wine.where("quantity > ?", quantity)
+  end
 end

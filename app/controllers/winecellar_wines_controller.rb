@@ -1,7 +1,11 @@
 class WinecellarWinesController < ApplicationController
   def index
     @winecellar = Winecellar.find(params[:id])
-    @wines = @winecellar.wines
+    if params[:order] == 'alpha'
+      @wines = @winecellar.sort_by_name
+    else
+      @wines = @winecellar.wines
+    end
   end
 
   def new
@@ -10,7 +14,7 @@ class WinecellarWinesController < ApplicationController
 
   def create
     @winecellar = Winecellar.find(params[:id])
-    wine = Wine.create(wine_params)
+    wine = Wine.create!(wine_params)
 
     redirect_to "/winecellars/#{@winecellar.id}/wines"
   end

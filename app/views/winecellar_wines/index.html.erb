@@ -1,6 +1,13 @@
 <a href="/winecellars/">Wine Cellar Index</a>
 <a href="/wines/">Wines Index</a>
+
 <h1><%= @winecellar.name %></h1>
+<hr>
+  <%= button_to "Create Wine", "/winecellars/#{@winecellar.id}/wines/new" %>
+<hr>
+
+<h2><%= link_to "Sort wines by name", "/winecellars/#{@winecellar.id}/wines?order=alpha" %> </h2>
+<hr>
 
 <ul>
 <% @wines.each do |wine| %>
@@ -13,10 +20,8 @@
     <h3>Wine Score: <%= wine.wine_score%></h3>
     <h3>Created at: <%= wine.created_at%></h3>
     <h3>Updated at: <%= wine.updated_at%></h3>
+    <h2><%= link_to "Edit #{wine.name} Attributes", "/wines/#{wine.id}/edit" %></h2>
     <hr>
   </li>
 <% end %>
 </ul>
-<hr>
-  <%= button_to "Create Wine", "/winecellars/#{@winecellar.id}/wines/new" %>
-<hr>

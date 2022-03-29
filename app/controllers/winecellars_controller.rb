@@ -29,7 +29,13 @@ class WinecellarsController < ApplicationController
     winecellar = Winecellar.find(params[:id])
     winecellar.update(winecellar_params)
     redirect_to "/winecellars/#{winecellar.id}"
+  end
 
+  def destroy
+    @winecellar = Winecellar.find(params[:id])
+    @winecellar.destroy
+    flash.notice = "Wine Cellar Deleted!"
+    redirect_to "/winecellars"
   end
 
   def winecellar_params

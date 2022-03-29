@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/winecellars/:id/wines', to: 'winecellar_wines#index'
   get '/winecellars/:id/edit', to: 'winecellars#edit'
   patch '/winecellars/:id', to: 'winecellars#update'
-#  delete '/winecellars/:id', to: 'winecellars#destroy'
+  delete '/winecellars/:id', to: 'winecellars#destroy'
 
   get '/wines', to: 'wines#index'
   get '/wines/new', to: 'wines#new'

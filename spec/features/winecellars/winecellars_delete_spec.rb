@@ -10,15 +10,15 @@
 
 require 'rails_helper'
 
-RSpesc.describe "user deletes a winecellar" do
+RSpec.describe "user deletes a winecellar" do
   describe "they link from the show page" do
     it "displays all winecellars without the deleted entry" do
       john_1 = Winecellar.create!(name: 'John', full:0, location:'Basement', capacity:500)
       john_2 = Winecellar.create!(name: 'Deb', full:0, location:'Livingroom', capacity:36)
       john_3 = Winecellar.create!(name: 'Homemade', full:0, location:'Basement', capacity:100)
 
-    #  visit '/winecellars'
-      visit article_path(john_1)
+      visit '/winecellars'
+#      visit winecellars_path(john_1)
 
       expect(page).to have_content(john_1.name)
       expect(page).to have_content(john_2.name)
@@ -26,11 +26,11 @@ RSpesc.describe "user deletes a winecellar" do
 
       click_link "Delete Wine Cellar #{john_1.name}"
 
-      expect(current_path).to eq(winecellars_path)
+      expect(current_path).to eq('/winecellars')
       expect(page).to have_content(john_2.name)
       expect(page).to_not have_content(john_1.name)
       expect(page).to have_content("Wine Cellar Deleted!")
-      
+
     end
   end
 end

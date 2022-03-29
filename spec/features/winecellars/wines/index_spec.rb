@@ -50,6 +50,13 @@ RSpec.describe 'Winecellar wines index' do
     click_on('Wines Index')
     expect(current_path).to eq("/wines/")
   end
+  it "has link to edit wine " do
+
+    visit ("/winecellars/#{@john_1.id}/wines")
+    click_link("Edit #{@white.name} Attributes")
+    expect(current_path).to eq("/wines/#{@white.id}/edit")
+
+  end
 
   it 'has a link to sort wines alphabetical by name' do
 

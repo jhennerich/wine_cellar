@@ -12,6 +12,12 @@ class Winecellar < ApplicationRecord
     wines.order(:name)
   end
 
+#  def last_updated
+#    update_at.strftime("%Y-%m-%d")
+#  end
+  
+
+
 #  def self.easy_read_date_created_at
 #    created_at.strftime("%B, %d, %Y")
 #  end

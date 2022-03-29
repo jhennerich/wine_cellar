@@ -15,7 +15,16 @@
       <h3>Created at: <%= wine.created_at.strftime("%B, %d, %Y")%></h3>
       <h3>Updated at: <%= wine.updated_at.strftime("%B, %d, %Y")%></h3>
       <h2><%= link_to "Edit #{wine.name} Attributes", "/wines/#{wine.id}/edit" %></h2>
+      <h2><%= link_to "Delete Wine #{wine.name}", "/wines/#{wine.id}",
+              method: :delete, data: {confirm: "Really delete the Wine?"},
+              local: true %></h2>
+
       <hr>
     </li>
   <% end %>
 </ul>
+      <% flash.each do |type, msg| %>
+        <div>
+          <h2><%= msg %></h2>
+        </div>
+      <% end %>

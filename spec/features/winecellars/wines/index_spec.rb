@@ -23,6 +23,9 @@ RSpec.describe 'Winecellar wines index' do
 
     @red = @john_1.wines.create!(name:'Elouan', varietal:'Pinot Noir',
                          quantity:1, in_stock:true, year:2018, wine_score:95)
+
+    @rose = @john_1.wines.create!(name:'A nice wine', varietal:'Rose',
+                         quantity:1, in_stock:true, year:2018, wine_score:95)
   end
 
   it 'shows all of the names of the wines for the winecellar' do
@@ -50,11 +53,14 @@ RSpec.describe 'Winecellar wines index' do
 
   it 'has a link to sort wines alphabetical by name' do
 
-    visit ("/winecellars/#{john_1.id}/wines")
+    visit ("/winecellars/#{@john_1.id}/wines")
     expect(page).to have_content("Sort wines by name")
     click_on('Sort wines by name')
 
-    expect(current_path).to eq("/winecellars/#{john_1.id}/wines")
-    
+    expect(current_path).to eq("/winecellars/#{@john_1.id}/wines")
+    expect(@rose.name).to appear_before(@red.name)
+    expect(@rose.name).to appear_before(@white.name)
+    expect(@white.name).to appear_before(@red.name)
+
   end
 end

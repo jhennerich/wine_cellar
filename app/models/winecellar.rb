@@ -3,11 +3,14 @@ class Winecellar < ApplicationRecord
 
   validates_presence_of :name, :location, :capacity
   validates :full, inclusion:[true, false]
-  
+
   def self.sorted_by_created_at
     order(created_at: :desc)
   end
 
+  def sort_by_name
+    wines.order(:name)
+  end
 
 #  def self.easy_read_date_created_at
 #    created_at.strftime("%B, %d, %Y")

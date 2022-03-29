@@ -5,12 +5,12 @@ RSpec.describe Wine, type: :model do
     it {should validate_presence_of(:name)}
     it {should validate_presence_of(:varietal)}
     it {should validate_presence_of(:quantity)}
-    it {should allow_value(true).for(:in_stock)}
+    it {should allow_values(true, false).for(:in_stock)}
     it {should validate_presence_of(:year)}
     it {should validate_presence_of(:wine_score)}
   end
   describe 'class methods' do
-    it '.number_of_wines' do
+    it 'number_of_wines' do
       john_1 = Winecellar.create!(name: 'John', full:0, location:'Basement', capacity:500)
 
       white = john_1.wines.create!(name:'Blanc Slate', varietal:'Sauvignon Blanc',

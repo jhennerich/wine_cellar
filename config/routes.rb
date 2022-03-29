@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   patch '/wines/:id', to: 'wines#update'
   post '/winecellars/:id/wines', to: 'winecellar_wines#create'
   post '/winecellars/:id/wines/new', to: 'winecellar_wines#new'
+  delete '/wines/:id', to: 'wines#destroy'
 end

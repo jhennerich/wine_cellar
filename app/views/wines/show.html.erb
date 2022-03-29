@@ -12,8 +12,15 @@
 <h3>Created at:<%= @wine.created_at%></h3>
 <h3>Updated at:<%= @wine.updated_at%></h3>
 
-<!-- <a href="/wines/<%= @wine.id %>/edit">Edit</a>
-  -->
-
 <p> <%= button_to "Edit #{@wine.name}", "/wines/#{@wine.id}/edit",
         method: :get %></p>
+
+<h2><%= link_to "Delete Wine #{@wine.name}", "/wines/#{@wine.id}",
+        method: :delete, data: {confirm: "Really delete the Wine?"},
+        local: true %></h2>
+
+<% flash.each do |type, msg| %>
+  <div>
+    <h2><%= msg %></h2>
+  </div>
+<% end %>

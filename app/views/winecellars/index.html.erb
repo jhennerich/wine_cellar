@@ -7,9 +7,17 @@
     <h2>Name: <a href="/winecellars/<%= cellar.id %>"><%= cellar.name %></a></h3>
     <h3>Created_at: <%= cellar.created_at %></h3>
     <h2><%= link_to "Edit Wine Cellar", "/winecellars/#{cellar.id}/edit" %></h2>
+    <h2><%= link_to "Delete Wine Cellar #{cellar.name}", "/winecellars/#{cellar.id}",
+                    method: :delete, data: {confirm: "Really delete the Wine Cellar?"},
+                    local: true %></h2>
     <hr>
     </li>
   <% end %>
 </ul>
 <hr>
 <h2><%= link_to "Create Wine Cellar", "/winecellars/new" %></h2>
+<% flash.each do |type, msg| %>
+  <div>
+    <h2><%= msg %></h2>
+  </div>
+<% end %>

@@ -8,7 +8,7 @@ class WinesController < ApplicationController
     @wine = Wine.find(params[:id])
   end
 
-  
+
 
   def edit
     @wine = Wine.find(params[:id])
@@ -19,6 +19,12 @@ class WinesController < ApplicationController
     wine.update(wine_params)
     redirect_to "/wines/#{wine.id}"
 
+  end
+  def destroy
+    @wine = Wine.find(params[:id])
+    @wine.destroy
+    flash.notice = "Wine Deleted!"
+    redirect_to "/wines"
   end
 
   def wine_params

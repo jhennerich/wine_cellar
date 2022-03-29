@@ -14,3 +14,13 @@
         method: :get %></p>
 
 <h2><a href="/winecellars/<%=@winecellar.id%>/wines">Wines in <%= @winecellar.name %></a></h2>
+
+<h2><%= link_to "Delete Wine Cellar #{@winecellar.name}", "/winecellars/#{@winecellar.id}",
+                method: :delete, data: {confirm: "Really delete the Wine Cellar?"},
+                local: true %></h2>
+
+<% flash.each do |type, msg| %>
+  <div>
+    <h2><%= msg %></h2>
+  </div>
+<% end %>

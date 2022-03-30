@@ -5,6 +5,7 @@
 <%= form.text_field :location %><p>
 <%= form.label :capacity %>
 <%= form.text_field :capacity %><p>
-
+<%= form.label :full%>
+<%= form.select(:full, ["false", "true"]) %>
 <%= form.submit 'Create Wine Cellar' %>
 <% end %>

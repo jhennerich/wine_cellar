@@ -4,12 +4,7 @@ class WinecellarsController < ApplicationController
   end
 
   def show
-    ### temperary fix for when id = new
-#    if params[:id] == "new"
-#      @winecellar = Winecellar.find(Winecellar.last.id)
-#    else
-      @winecellar = Winecellar.find(params[:id])
-#    end
+    @winecellar = Winecellar.find(params[:id])
     @winecount = Wine.number_of_wines(params[:id])
   end
 
@@ -27,7 +22,7 @@ class WinecellarsController < ApplicationController
 
   def update
     winecellar = Winecellar.find(params[:id])
-    winecellar.update(winecellar_params)
+    winecellar.update!(winecellar_params)
     redirect_to "/winecellars/#{winecellar.id}"
   end
 
@@ -38,8 +33,9 @@ class WinecellarsController < ApplicationController
     redirect_to "/winecellars"
   end
 
+  private
   def winecellar_params
-    params.permit(:name, :location, :capacity)
+    params.permit(:name, :location, :capacity, :full)
   end
 
 end

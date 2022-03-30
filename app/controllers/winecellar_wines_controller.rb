@@ -26,6 +26,9 @@ class WinecellarWinesController < ApplicationController
     redirect_to "/winecellars/#{@winecellar.id}/wines"
   end
 
+  def show
+  end
+
   private
     def wine_params
       {
@@ -37,10 +40,5 @@ class WinecellarWinesController < ApplicationController
         in_stock: params[:in_stock],
         winecellar_id: @winecellar.id
       }
-#    params.permit(:name, :varietal, :quantity, :year, :wine_score, :winecellar_id)
   end
-
-#  def show
-#    @winecellar = Winecellar.find(params[:id])
-#  end
 end

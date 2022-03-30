@@ -2,15 +2,7 @@ class Wine < ApplicationRecord
   belongs_to :winecellar
 
   validates_presence_of :name, :varietal, :quantity, :year, :wine_score
-#  validates :in_stock, inclusion:[true, false]
-
-#  def in_stock
-#    if quantity > 0
-#      true
-#    else
-#      false
-#    end
-#  end
+  validates :in_stock, inclusion:[true, false]
 
   def self.is_in_stock
     Wine.where("in_stock = true")

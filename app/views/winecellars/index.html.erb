@@ -4,8 +4,8 @@
 <ul id="winecellars">
   <% @winecellars.each do |cellar| %>
     <li>
-    <h2>Name: <a href="/winecellars/<%= cellar.id %>"><%= cellar.name %></a></h3>
-    <h3>Created_at: <%= cellar.created_at %></h3>
+    <h2>Name: <a href="/winecellars/<%= cellar.id %>"><%= cellar.name %></a>
+        Created_at: <%= cellar.created_at %>
     <h2><%= link_to "Edit Wine Cellar", "/winecellars/#{cellar.id}/edit" %></h2>
     <h2><%= link_to "Delete Wine Cellar #{cellar.name}", "/winecellars/#{cellar.id}",
                     method: :delete, data: {confirm: "Really delete the Wine Cellar?"},

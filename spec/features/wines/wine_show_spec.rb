@@ -1,3 +1,9 @@
+# User Story 4, Child Show
+#
+# As a visitor
+# When I visit '/child_table_name/:id'
+# Then I see the child with that id including the child's attributes:
+
 require "rails_helper"
 RSpec.describe 'wines show page' do
 
@@ -18,6 +24,7 @@ RSpec.describe 'wines show page' do
         expect(page).to_not have_content(red.name)
       end
     end
+
     it "has links to winecellar index and wine index" do
       john_1 = Winecellar.create!(name: 'John', full:0, location:'Basement', capacity:500)
       white = john_1.wines.create!(name:'Blanc Slate', varietal:'Sauvignon Blanc',

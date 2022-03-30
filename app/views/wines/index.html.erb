@@ -14,6 +14,7 @@
       <h3>Wine Score: <%= wine.wine_score%></h3>
       <h3>Created at: <%= wine.created_at.strftime("%B, %d, %Y")%></h3>
       <h3>Updated at: <%= wine.updated_at.strftime("%B, %d, %Y")%></h3>
+      <h3>Found in Wine Cellar: <%= Winecellar.find(wine.winecellar_id).name%></h3>
       <h2><%= link_to "Edit #{wine.name} Attributes", "/wines/#{wine.id}/edit" %></h2>
       <h2><%= link_to "Delete Wine #{wine.name}", "/wines/#{wine.id}",
               method: :delete, data: {confirm: "Really delete the Wine?"},

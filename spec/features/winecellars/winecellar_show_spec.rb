@@ -1,6 +1,13 @@
-#User Story 7, Parent Child Count
-#As a visitor
-#When I visit a parent's show page
+# User Story 2, Parent Show
+#
+# As a visitor
+# When I visit '/parents/:id'
+# Then I see the parent with that id including the parent's attributes:
+# - data from each column that is on the parent table
+# #User Story 7, Parent Child Count
+# #As a visitor
+# #When I visit a parent's show page
+
 #I see a count of the number of children associated with this parent
 require "rails_helper"
 RSpec.describe 'Winecellar show page' do
@@ -12,6 +19,7 @@ RSpec.describe 'Winecellar show page' do
         visit ("/winecellars/#{john_1.id}")
         expect(page).to have_content(john_1.name)
       end
+      
       it "has links to winecellar index and wine index" do
         john_1 = Winecellar.create!(name: 'John', full:0, location:'Basement', capacity:500)
 

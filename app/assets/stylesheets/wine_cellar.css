@@ -50,3 +50,16 @@ div {
   padding: 8px;
   font-family: Arial;
 }
+
+a:link, a:visited {
+  background-color: grey;
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: green;
+}

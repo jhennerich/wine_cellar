@@ -1,5 +1,3 @@
-<a href="/winecellars/">Wine Cellar Index</a>
-<a href="/wines/">Wines Index</a>
 <h1>Wine Cellar attributes for: <%= @winecellar.name %></h1>
 
 <h3>Name:<%= @winecellar.name %></h3>
@@ -8,12 +6,12 @@
 <h3>Capacity:<%= @winecellar.capacity%></h3>
 <h3>Created at:<%= @winecellar.created_at%></h3>
 <h3>Updated at:<%= @winecellar.updated_at%></h3>
-
 <h3>Kinds of wine in the Wine Cellar: <%= @winecount %></h3>
+<hr>
+<h2><a href="/winecellars/<%=@winecellar.id%>/wines">Wines in <%= @winecellar.name %></a></h2>
 <p> <%= button_to "Edit #{@winecellar.name}", "/winecellars/#{@winecellar.id}/edit",
         method: :get %></p>
 
-<h2><a href="/winecellars/<%=@winecellar.id%>/wines">Wines in <%= @winecellar.name %></a></h2>
 
 <h2><%= link_to "Delete Wine Cellar #{@winecellar.name}", "/winecellars/#{@winecellar.id}",
                 method: :delete, data: {confirm: "Really delete the Wine Cellar?"},

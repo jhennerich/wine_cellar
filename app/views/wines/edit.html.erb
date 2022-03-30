@@ -1,5 +1,3 @@
-<a href="/winecellars/">Wine Cellar Index</a>
-<a href="/wines/">Wines Index</a><h3>Edit Wine </h3>
 <%= form_with url: "/wines/#{@wine.id}", method: :patch, local: true do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %><p>

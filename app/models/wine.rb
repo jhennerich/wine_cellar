@@ -15,4 +15,8 @@ class Wine < ApplicationRecord
   def self.quantity_more_than(quantity)
     Wine.where("quantity > ?", quantity)
   end
+
+  def self.search_for_exact_wine(match)
+    Wine.where(name: match)
+  end
 end

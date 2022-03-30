@@ -1,6 +1,9 @@
 class WinecellarsController < ApplicationController
   def index
     @winecellars = Winecellar.sorted_by_created_at
+    if params[:search_for_exact] && params[:search_for_exact] != ""
+      @winecellars = Winecellar.search_for_exact(params[:search_for_exact])
+    end
   end
 
   def show

@@ -47,7 +47,7 @@ RSpec.describe 'Edit a Wine' do
     fill_in('Name', with: 'TEST' )
     fill_in('Varietal', with: 'TEST' )
     fill_in('Quantity', with: '1' )
-    #fill_in('Year', with: 2022 )
+    fill_in('Year', with: 2022 )
     fill_in('wine_score', with: 90 )
     click_button('Update Wine')
 

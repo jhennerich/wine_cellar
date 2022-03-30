@@ -4,12 +4,16 @@
   <%= form.label :varietal%>
   <%= form.text_field :varietal %> <p>
   <%= form.label :quantity%>
-  <%= form.text_field :quantity %><p>
-<!--  <%= form.label :year%>
-  <%= form.text_field :year %><p>
-    -->
+  <%= form.number_field :quantity %><p>
+  <%= form.label :year%>
+  <%= form.number_field :year %><p>
   <%= form.label :wine_score%>
-  <%= form.text_field :wine_score %><p>
+  <%= form.number_field :wine_score %><p>
+
+  <%= form.label :in_stock, "In Stock True" %>
+  <%= form.radio_button :in_stock, "true" %><p>
+  <%= form.label :in_stock, "In Stock False" %>
+  <%= form.radio_button :in_stock, "false" %><p>
 
   <%= form.submit 'Update Wine'  %>
 <% end %>

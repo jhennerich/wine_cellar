@@ -11,10 +11,8 @@
 <%= form.number_field :year %><p>
 <%= form.label :winescore %>
 <%= form.number_field :wine_score %><p>
-<!--
-<%= form.label :full %>
-<%= check_box_tag "full", "true", "checked" %><p>
-  -->
+<%= form.label :in_stock %>
+<%= check_box_tag "in_stock", "true", "checked" %><p>
 
 <%= form.submit 'Create Wine' %>
 <% end %>

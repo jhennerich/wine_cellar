@@ -1,5 +1,11 @@
 
 <h1>All Wines </h1>
+<%= form_with(url: "/wines", local: true ,method: "get") do  |form| %>
+  <%= label_tag(:search_for_exact, "Search Wines") %>
+  <%= text_field_tag(:search_for_exact) %>
+  <%= submit_tag("Search Wines") %>
+<% end %>
+<hr>
 
 <ul id="wines">
   <% @wines.each do |wine| %>

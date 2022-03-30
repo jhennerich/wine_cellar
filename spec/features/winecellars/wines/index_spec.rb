@@ -70,4 +70,20 @@ RSpec.describe 'Winecellar wines index' do
     expect(@white.name).to appear_before(@red.name)
 
   end
+  it "has a search text box to filter wines by keyword" do
+
+    visit ("/wines")
+    expect(page).to have_content(@white.name)
+    expect(page).to have_content(@red.name)
+    expect(page).to have_content(@rose.name)
+
+    fill_in('Search Wines', with: "Elouan")
+    click_on('Search Wines')
+
+    expect(current_path).to eq("/wines")
+    expect(page).to have_content(@red.name)
+    expect(page).not_to have_content(@white.name)
+    expect(page).not_to have_content(@rose.name)
+
+  end
 end

@@ -1,12 +1,12 @@
 <h1>All Wine Cellars</h1>
-<ul id="winecellars">
-
 <%= form_with(url: "/winecellars", local: true ,method: "get") do  |form| %>
   <%= label_tag(:search_for_exact, "Search Wine Cellars") %>
   <%= text_field_tag(:search_for_exact) %>
   <%= submit_tag("Search Wine Cellars") %>
 <% end %>
 <hr>
+
+<ul id="winecellars">
 <% @winecellars.each do |cellar| %>
     <li>
     <h2>Name: <a href="/winecellars/<%= cellar.id %>"><%= cellar.name %></a>

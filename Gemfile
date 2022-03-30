@@ -42,6 +42,7 @@ group :development, :test do
   gem 'simplecov', require: false, group: :test
   gem 'shoulda-matchers', '~> 3.1'
   gem 'orderly'
+  gem 'active_designer'
 end
 
 group :development do

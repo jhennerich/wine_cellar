@@ -1,3 +1,9 @@
+# User Story 3, Child Index
+#
+# As a visitor
+# When I visit '/child_table_name'
+# Then I see each Child in the system including the Child's attributes:
+
 #User Story 8, Child Index Link
 
 #As a visitor
@@ -39,6 +45,7 @@ describe "user sees all wines" do
       expect(page).to have_content(@white.name)
       expect(page).to have_content(@red.name)
     end
+    
     it "has links to winecellar index and wine index" do
 
       visit ("/wines/")

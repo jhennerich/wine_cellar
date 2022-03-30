@@ -19,7 +19,14 @@
 # Next to every parent, I see a link to edit that parent's info
 # When I click the link
 # I should be taken to that parents edit page where I can update its information just like in User Story 4
-
+#
+# Search by name (exact match)
+#
+# As a visitor
+# When I visit an index page ('/parents') or ('/child_table_name')
+# Then I see a text box to filter results by keyword
+# When I type in a keyword that is an exact match of one or more of my records and press the Search button
+# Then I only see records that are an exact match returned on the page
 
 require "rails_helper"
 
@@ -53,9 +60,25 @@ describe "user sees all winecellars" do
   it "has a link to edit winecellar info linking to winecellars edit page" do
     john_1 = Winecellar.create!(name: 'John', full:0, location:'Basement', capacity:500)
 
-    visit ("/winecellars/")
+    visit ("/winecellars")
+#    save_and_open_page
     click_link('Edit Wine Cellar')
     expect(current_path).to eq("/winecellars/#{john_1.id}/edit")
+  end
+  it "has a search text box to filter winecellars by keyword" do
+    john_1 = Winecellar.create!(name: 'John', full:0, location:'Basement', capacity:500)
+    john_2 = Winecellar.create!(name: 'Deb', full:0, location:'Livingroom', capacity:36)
+
+    visit ("/winecellars")
+    expect(page).to have_content(john_1.name)
+    expect(page).to have_content(john_2.name)
+
+    fill_in('Search Wine Cellars', with: "John")
+    click_on('Search Wine Cellars')
+
+    expect(current_path).to eq("/winecellars")
+    expect(page).to have_content(john_1.name)
+    expect(page).not_to have_content(john_2.name)
 
   end
 end

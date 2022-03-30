@@ -10,4 +10,8 @@ class Winecellar < ApplicationRecord
   def sort_by_name
     wines.order(:name)
   end
+
+  def self.search_for_exact(match)
+    Winecellar.where(name: match)
+  end
 end

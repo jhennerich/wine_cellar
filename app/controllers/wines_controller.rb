@@ -16,7 +16,7 @@ class WinesController < ApplicationController
 
   def update
     wine = Wine.find(params[:id])
-    wine.update(wine_params)
+    wine.update!(wine_params)
     redirect_to "/wines/#{wine.id}"
 
   end
@@ -28,6 +28,12 @@ class WinesController < ApplicationController
   end
 
   def wine_params
-    params.permit(:name, :varietal, :quantity, :year, :wine_score, :winecllar_id )
+    params.permit(:name,
+                  :varietal,
+                  :quantity,
+                  :year,
+                  :wine_score,
+                  :in_stock,
+                 )
   end
 end

@@ -1,7 +1,6 @@
 class WinecellarWinesController < ApplicationController
   def index
 
-#    binding.pry
     @quantity_number = 0
     @winecellar = Winecellar.find(params[:id])
     if params[:order] == 'alpha'
@@ -27,6 +26,9 @@ class WinecellarWinesController < ApplicationController
     redirect_to "/winecellars/#{@winecellar.id}/wines"
   end
 
+  def show
+  end
+
   private
     def wine_params
       {
@@ -35,12 +37,8 @@ class WinecellarWinesController < ApplicationController
         quantity: params[:quantity],
         year: params[:year].to_i,
         wine_score: params[:wine_score],
+        in_stock: params[:in_stock],
         winecellar_id: @winecellar.id
       }
-#    params.permit(:name, :varietal, :quantity, :year, :wine_score, :winecellar_id)
   end
-
-#  def show
-#    @winecellar = Winecellar.find(params[:id])
-#  end
 end

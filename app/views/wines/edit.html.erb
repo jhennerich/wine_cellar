@@ -1,17 +1,16 @@
-<a href="/winecellars/">Wine Cellar Index</a>
-<a href="/wines/">Wines Index</a><h3>Edit Wine </h3>
 <%= form_with url: "/wines/#{@wine.id}", method: :patch, local: true do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %><p>
   <%= form.label :varietal%>
   <%= form.text_field :varietal %> <p>
   <%= form.label :quantity%>
-  <%= form.text_field :quantity %><p>
-<!--  <%= form.label :year%>
-  <%= form.text_field :year %><p>
-    -->
+  <%= form.number_field :quantity %><p>
+  <%= form.label :year%>
+  <%= form.number_field :year %><p>
   <%= form.label :wine_score%>
-  <%= form.text_field :wine_score %><p>
-
+  <%= form.number_field :wine_score %><p>
+  <%= form.label :in_stock %>
+  <%= form.select(:in_stock, ["true", "false"]) %>
+  
   <%= form.submit 'Update Wine'  %>
 <% end %>

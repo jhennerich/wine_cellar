@@ -1,24 +1,18 @@
-# README
+# Relational Rails:  wine_cellar
+## Author: John Hennerich  Github: https://github.com/jhennerich
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version: 2.7.4
+* Rails version: 5.2.7
 
-Things you may want to cover:
+## Included gems:
+- gem 'rspec-rails'
+- gem 'capybara'
+- gem 'launchy'
+- gem 'pry'
+- gem 'simplecov', require: false, group: :test
+- gem 'shoulda-matchers', '~> 3.1'
+- gem 'orderly'
+- gem 'active_designer'
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Database schema
+![wine_cellar schema](wine_cellar_schema.png)

@@ -23,7 +23,3 @@ RSpec.describe Wine, type: :model do
     end
   end
 end
-
-#it { should allow_value(true).for(:foreign) }
-#    it { should allow_value(false).for(:foreign) }
-#    validates :foreign, inclusion: [true, false]
